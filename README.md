@@ -21,6 +21,7 @@ in order to use the vulnrability check you will need to use the NSE engine scrip
     pip install python-nmap
 
 *you will need to modify the nmap-vulners path inside the nmap_vuln class
+
 ** The python-nmap can work independently without installing nmap , but if you will use linux , there will be some commands
 that need sudo privileges and those can only be given to a predefined script/ tool and not the python package 
 
@@ -37,5 +38,5 @@ python-telegram-bot
 
     pip install python-telegram-bot.
     
-* *in the Key file you will need to place your own API-KEY you got from bot-father on telegram for your own bot
+***in the Key file you will need to place your own API-KEY you got from bot-father on telegram for your own bot
     
