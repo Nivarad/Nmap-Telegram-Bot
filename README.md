@@ -37,5 +37,5 @@ python-telegram-bot
 
     pip install python-telegram-bot.
     
-in the Key file you will need to place your own API-KEY you got from bot-father on telegram for your own bot
+* *in the Key file you will need to place your own API-KEY you got from bot-father on telegram for your own bot
     
