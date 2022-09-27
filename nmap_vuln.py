@@ -1,12 +1,12 @@
 from nmap_inter import NmapInterface
 import nmap
-
+import socket
 
 class NmapVuln(NmapInterface):
 
     def __init__(self):
         self.scanner = nmap.PortScanner()
-        self.ip_address = '192.168.68.110'
+        self.ip_address = '127.0.0.1'
 
     def get_open_services(self):
 
@@ -56,5 +56,7 @@ class NmapVuln(NmapInterface):
             return "couldn't finish the scan for some reason "
 
     def set_ip_address(self, ip_address):
-        self.ip_address = str(ip_address).strip()
-        print("set the ip to : ", ip_address)
+
+        host_name = str(ip_address).strip()
+        self.ip_address = socket.gethostbyname(host_name)
+        print("set the ip to : ", self.ip_address)
