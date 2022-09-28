@@ -20,7 +20,7 @@ class TelegramNmapBot(TelegramBotInterface):
                                   '/open_services <IP_ADDRESS>\n'
                                   '/operating_system <IP_ADDRESS>\n'
                                   '/vulners <IP_ADDRESS>\n'
-                                  '/nmap_god <IP_ADDRESS>')
+                                  '/do_everything <IP_ADDRESS>')
 
     def open_services_command(self, update, context):
         print("lets find open services")
