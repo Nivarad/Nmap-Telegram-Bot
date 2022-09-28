@@ -23,7 +23,7 @@ class TelegramNmapBot(TelegramBotInterface):
                                   '/nmap_god <IP_ADDRESS>')
 
     def open_services_command(self, update, context):
-        print("lets nmap this shit")
+        print("lets find open services")
         ip = extract_ip(update, 's ')
         self.nm.set_ip_address(ip)
         scan_res = self.nm.get_open_services()
@@ -46,7 +46,7 @@ class TelegramNmapBot(TelegramBotInterface):
         send_message(vulners, update)
 
     def do_everything_command(self, update, context):
-
+        print("do everything")
         ip = extract_ip(update, 'g ')
         self.nm.set_ip_address(ip)
         open_services = self.nm.get_open_services()
@@ -100,7 +100,7 @@ if __name__ == '__main__':
     updater = Updater(keys.API_KEY, use_context=True)
     dp = updater.dispatcher
 
-    # Commands
+    # handling commands 
     dp.add_handler(CommandHandler('start', bot.start_command))
     dp.add_handler(CommandHandler('help', bot.help_command))
     dp.add_handler(CommandHandler('open_services', bot.open_services_command))
@@ -108,7 +108,7 @@ if __name__ == '__main__':
     dp.add_handler(CommandHandler('vulners', bot.vulners_command))
     dp.add_handler(CommandHandler('do_everything', bot.do_everything_command))
 
-    # Messages
+    # handling messages
     dp.add_handler(MessageHandler(Filters.text, bot.handle_response))
 
     # Run the bot

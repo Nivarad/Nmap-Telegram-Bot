@@ -9,11 +9,9 @@ class NmapVuln(NmapInterface):
         self.ip_address = '127.0.0.1'
 
     def get_open_services(self):
-
         # Arguments : --privilliged  in order to gain sudo privileges
         # -v stand for Verbose , it asks for more detailed info in the scan
         # -sV stand for service version , you get the version of all services
-
         self.scanner.scan(self.ip_address, self.TOP_PORTS_1000, ' --privileged -v -sV -sS')
         scan_res = "Opened Ports : " + str(self.scanner[self.ip_address]['tcp'].keys())
         ports = self.scanner._scan_result['scan'][self.ip_address]['tcp']
@@ -25,14 +23,11 @@ class NmapVuln(NmapInterface):
             else:
                 name = ports[port]['name']
                 scan_res += "\n" + "Port "+str(port)+" Service: "+name
-        print(scan_res)
         return scan_res
 
     def get_operating_system(self):
         machine = self.scanner.scan(self.ip_address, self.TOP_PORTS_1000, '--privileged -O')['scan'][self.ip_address]
         machine = machine['osmatch'][0]['name']
-        print("Operating System is,: " + machine + "\n Please mind the script doesn't gurentee it's the right "
-                                                   "OS, it's a wild guess based on the behaviour of the machine ")
         return "Operating System is : "+machine + "\n Please mind the script doesn't gurentee it's the right " \
                                                   "OS, it's a wild guess based on the behaviour of the machine "
 
