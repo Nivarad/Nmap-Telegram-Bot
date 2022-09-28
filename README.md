@@ -23,7 +23,7 @@ in order to use the vulnrability check you will need to use the NSE engine scrip
 *you will need to modify the nmap-vulners path inside the nmap_vuln class
 
 ** The python-nmap can work independently without installing nmap , but if you will use linux , there will be some commands
-that need sudo privileges and those can only be given to a predefined script/ tool and not the python package 
+that need sudo privileges and those can only be given to a predefined script/ tool and not the python package, so unless you are using linux - skip the installation of libcap2 and also in the file nmap_vuln delete from the nmap scanner the argument of '--privileged' 
 
 now in order to run the script from any user you will need to give nmap root priviliages , so you will need 
 to install libcap2 - write these commands:
