@@ -14,7 +14,7 @@ class TelegramNmapBot(TelegramBotInterface):
 
     def help_command(self, update, context):
         update.message.reply_text('I can map networks for you in a single click!\n'
-                                  'All you need is to give me the ip of the target machine and choose a command '
+                                  'All you need is to give me the ip or domain of the target machine and choose a command '
                                   'and I will do all the rest\n'
                                   'The format of the commands are :\n'
                                   '/open_services <IP_ADDRESS>\n'
