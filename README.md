@@ -25,6 +25,7 @@ to install libcap2 - write these commands:
     sudo apt-get install libcap2-bin
     sudo setcap cap_net_raw,cap_net_admin,cap_net_bind_service+eip $(which nmap)
     getcap $(which nmap)
+    
     for more information check :https://www.maketecheasier.com/run-nmap-without-root-or-sudo/
 
 next : in order to run the telegram bot and to connect it with our nmap-vuln code you will need to install
