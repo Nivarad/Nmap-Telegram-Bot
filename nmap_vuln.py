@@ -56,5 +56,5 @@ class NmapVuln(NmapInterface):
 
         host_name = str(ip_address).strip()
         self.ip_address = socket.gethostbyname(host_name)
-        print("set the ip to : ", self.ip_address)
+        
 
