@@ -19,8 +19,8 @@ all methods except those contain vulnerability check can be proccessed only with
 
 
 
-* now, because nmap requires root privileges for many flags , unless you will use root or sudo - you will need to give nmap special root priviliages , so you will need 
-to install libcap2 - write these commands:
+now, because nmap requires root privileges for many flags , unless you will use root or sudo - you will need to give nmap special root priviliages , so you will need 
+to install libcap2 so write these commands:
 
     sudo apt-get install libcap2-bin
     sudo setcap cap_net_raw,cap_net_admin,cap_net_bind_service+eip $(which nmap)
